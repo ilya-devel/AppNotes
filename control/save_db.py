@@ -1,18 +1,17 @@
-from datetime import datetime
-import control.is_db
+from control.settings import FILE_DB
+from control.write_log import write_log
 
 
-def save_db(lst_notes:list):
+def save_db(lst_notes: list):
     '''
     Saving database
     :param lst_notes: list of notes
-    :return:
+    :return: process complete
     '''
     try:
-        with open(control.is_db.FILE_DB, 'a', encoding='UTF-8') as file:
+        with open(FILE_DB, 'w', encoding='UTF-8') as file:
             for note in lst_notes:
-                file.write(f'{note.__str__()}\n')
-        return 0
+                file.write(f'{str(note).strip()}\n')
     except Exception as err:
-        with open('log_err.txt', 'a', encoding='UTF-8') as file:
-            file.write(f'{datetime.now().strftime("%Y-%m-%d %H-%M-%S")}\t[ERROR]\t{err}')
+        write_log('ERROR', str(err))
+    return 0

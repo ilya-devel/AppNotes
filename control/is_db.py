@@ -1,9 +1,9 @@
 import os
-from datetime import datetime
-
+from control.settings import FILE_DB
 from classes.note import Note
+from control.write_log import write_log
 
-FILE_DB = 'db.csv'
+
 
 
 def is_db():
@@ -11,14 +11,15 @@ def is_db():
     if os.path.isfile(FILE_DB):
         with open(FILE_DB, 'r', encoding='UTF-8') as file:
             for row in file.readlines():
-                lst_notes.append(Note.from_db(row, len(lst_notes)))
+                if row.strip() != '' and len(row.split(';')) == 4:
+                    tmp = Note()
+                    tmp.from_db(row, len(lst_notes))
+                    lst_notes.append(tmp)
     else:
         err = 'Database is corrupted or missing'
         print(err)
         msg = 'Create new database'
         print(msg)
-        with open('log_err.txt', 'a', encoding='UTF-8') as file:
-            file.write(f'{datetime.now().strftime("%Y-%m-%d %H-%M-%S")}\t[ERROR]\t{err}')
-            file.write(f'{datetime.now().strftime("%Y-%m-%d %H-%M-%S")}\t[DEBUG]\t{msg}')
-
+        write_log('ERROR', err)
+        write_log('DEBUG', msg)
     return lst_notes

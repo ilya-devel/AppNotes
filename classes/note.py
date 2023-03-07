@@ -17,13 +17,13 @@ class Note:
                 self.msg = msg
             self.date_edit = datetime.now().strftime("%Y-%m-%d %H-%M-%S")
 
-    @staticmethod
-    def from_db(params=str, id=int):
-        tmp = Note()
-        tmp.id = id
-        tmp.date_create, tmp.title, tmp.msg, tmp.date_edit = params.split(';')
-        return tmp
+    def from_db(self, params=str, id=int):
+        self.id = id
+        self.date_create, self.title, self.msg, self.date_edit = params.split(';')
+
+    def add_note(self, title, msg):
+        self.title = title
+        self.msg = msg
 
     def __str__(self) -> str:
         return f'{self.date_create};{self.title};{self.msg};{self.date_edit}'
-

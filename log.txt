@@ -1,0 +1,16 @@
+2023-03-07 17-04-33	[ERROR]	Database is corrupted or missing
+2023-03-07 17-04-33	[DEBUG]	Create new database
+2023-03-07 17-05-00	[ERROR]	Database is corrupted or missing
+2023-03-07 17-05-00	[DEBUG]	Create new database
+2023-03-07 17-07-21	[ERROR]	Database is corrupted or missing
+2023-03-07 17-07-21	[DEBUG]	Create new database
+2023-03-07 17-10-05	[ERROR]	Database is corrupted or missing
+2023-03-07 17-10-05	[DEBUG]	Create new database
+2023-03-07 17-12-19	[ERROR]	Database is corrupted or missing
+2023-03-07 17-12-19	[DEBUG]	Create new database
+2023-03-07 17-13-40	[ERROR]	Database is corrupted or missing
+2023-03-07 17-13-40	[DEBUG]	Create new database
+2023-03-07 17-34-02	[ERROR]	not writable
+2023-03-07 17-34-05	[ERROR]	not writable
+2023-03-07 17-43-39	[ERROR]	write() argument must be str, not Note
+2023-03-07 17-43-50	[ERROR]	write() argument must be str, not Note

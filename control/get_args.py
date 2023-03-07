@@ -9,7 +9,13 @@ def get_args(args: list):
     """
     if len(args) == 0 or '--help' in args:
         return dict()
-    elif '--add' or '--show' or '--find' or '--edit' or '--delete' or '--export' or '--import' not in args:
+    elif '--add' not in args \
+            and '--show' not in args \
+            and '--find' not in args \
+            and '--edit' not in args \
+            and '--delete' not in args \
+            and '--export' not in args \
+            and '--import' not in args:
         print('UNKNOWN ARGUMENTS\n')
         return dict()
     else:
