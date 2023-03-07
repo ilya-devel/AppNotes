@@ -17,8 +17,8 @@ class Note:
                 self.msg = msg
             self.date_edit = datetime.now().strftime("%Y-%m-%d %H-%M-%S")
 
-    def from_db(self, params=str, id=int):
-        self.id = id
+    def from_db(self, params=str, ind=int):
+        self.id = ind
         self.date_create, self.title, self.msg, self.date_edit = params.split(';')
 
     def add_note(self, title, msg):

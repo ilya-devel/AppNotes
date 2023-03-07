@@ -17,6 +17,38 @@ def split_string(txt: str, size: int):
     return list_str
 
 
+def show_element(elem, ind: int):
+    print(f'{"id":^5} | '
+          f'{"Date Create":^21} | '
+          f'{"Title":^30} | '
+          f'{"Message":^50} | '
+          f'{"Date Edit":^21}')
+    print(f'{"=" * 6}+{"=" * 23}+{"=" * 32}+{"=" * 52}+{"=" * 21}')
+    dc, tit, msg, de = str(elem).strip().split(';')
+    if len(tit) < 30 or len(msg) < 50:
+        print(f'{ind:^5} | '
+              f'{dc:^21} | '
+              f'{tit:^30} | '
+              f'{msg:^50} | '
+              f'{de:^21}')
+    else:
+        lst_tit = split_string(tit, 28)
+        lst_msg = split_string(msg, 48)
+        max_size = len(lst_msg) if len(lst_msg) > len(lst_tit) else len(lst_tit)
+        print(f'{ind:^5} | '
+              f'{dc:^21} | '
+              f'{lst_tit[0]:^30} | '
+              f'{lst_msg[0]:^50} | '
+              f'{de:^21}')
+        for ind in range(1, max_size):
+            print(f'{" ":^5} | '
+                  f'{" ":^21} | '
+                  f'{lst_tit[ind] if ind < len(lst_tit) else " ":^30} | '
+                  f'{lst_msg[ind] if ind < len(lst_msg) else " ":^50} | '
+                  f'{" ":^21}')
+    print(f'{"-" * 6}+{"-" * 23}+{"-" * 32}+{"-" * 52}+{"-" * 21}')
+
+
 def show_all(lst_notes: list):
     print(f'{"id":^5} | '
           f'{"Date Create":^21} | '

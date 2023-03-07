@@ -1,15 +1,13 @@
-from control import *
 from control import is_db, get_args
 from control.add_note import add_note
 from control.save_db import save_db
-from view.show_all import show_all
+from control.check_id import check_id
+from view.show import show_all, show_element
 
 
 def run_app(argv: list):
     lst_notes = is_db.is_db()
-    print('DB loaded')
     args = get_args.get_args(argv)
-    print('Get args')
 
     if len(args.keys()) == 0:
         with open('help.txt', 'r', encoding='UTF-8') as f:
@@ -17,9 +15,6 @@ def run_app(argv: list):
         return 0
 
     work_with_keys(lst_notes, args)
-
-    print(args)
-    print(lst_notes)
 
     save_db(lst_notes)
 
@@ -31,8 +26,9 @@ def work_with_keys(lst_notes, args):
         if '--all' in args['--show']:
             show_all(lst_notes)
         if '--id' in args['--show']:
-            id = args['--show']['--id']
-            id = int(id) if (id.is_digit) else "ERROR"
+            ind = check_id(args['--show']['--id'], len(lst_notes))
+            if ind != 'err':
+                show_element(lst_notes[ind], ind)
 
     if '--find' in args:
         pass

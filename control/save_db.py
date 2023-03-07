@@ -3,11 +3,11 @@ from control.write_log import write_log
 
 
 def save_db(lst_notes: list):
-    '''
+    """
     Saving database
     :param lst_notes: list of notes
     :return: process complete
-    '''
+    """
     try:
         with open(FILE_DB, 'w', encoding='UTF-8') as file:
             for note in lst_notes:
