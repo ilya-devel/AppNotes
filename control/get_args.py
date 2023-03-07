@@ -14,3 +14,4 @@ def get_args(args: list):
         return dict()
     else:
         return set_args(args)
+
