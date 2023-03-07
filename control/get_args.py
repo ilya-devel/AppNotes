@@ -1,9 +1,13 @@
 from control.set_args import set_args
 
-def get_args(args:list):
+
+def get_args(args: list):
+    """
+    Function checks if arguments were received or not
+    :param args: list of arguments
+    :return: dict
+    """
     if len(args) == 0 or '--help' in args:
-        with open('help.txt', 'r', encoding='UTF-8') as f:
-            print(f.read())
-        return 0
+        return dict()
     else:
-        set_args(args)
+        return set_args(args)

@@ -1,4 +1,4 @@
 from sys import argv
-from control.get_args import get_args
+from control.control import run_app
 
-get_args(argv[1:])
+run_app(argv[1:])
