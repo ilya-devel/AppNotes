@@ -19,3 +19,4 @@
 2023-03-07 18-57-44	[ERROR]	Unknown index 5 
 2023-03-07 19-00-47	[ERROR]	Unknown index 5 
 2023-03-07 19-01-31	[ERROR]	Unknown index 5 
+2023-03-07 19-15-32	[ERROR]	Index out of range: 777 

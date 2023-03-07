@@ -27,3 +27,6 @@ class Note:
 
     def __str__(self) -> str:
         return f'{self.date_create};{self.title};{self.msg};{self.date_edit}'
+
+    def __lt__(self, other):
+        return self.date_create < other.date_create

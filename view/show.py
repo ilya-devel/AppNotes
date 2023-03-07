@@ -1,3 +1,6 @@
+import operator
+
+
 def split_string(txt: str, size: int):
     list_str = []
     tmp_str = ''
@@ -50,6 +53,7 @@ def show_element(elem, ind: int):
 
 
 def show_all(lst_notes: list):
+    lst_notes.sort()
     print(f'{"id":^5} | '
           f'{"Date Create":^21} | '
           f'{"Title":^30} | '
@@ -59,7 +63,7 @@ def show_all(lst_notes: list):
     for i in range(len(lst_notes)):
         dc, tit, msg, de = str(lst_notes[i]).strip().split(';')
         if len(tit) < 30 or len(msg) < 50:
-            print(f'{i:^5} | '
+            print(f'{lst_notes[i].id:^5} | '
                   f'{dc:^21} | '
                   f'{tit:^30} | '
                   f'{msg:^50} | '
@@ -68,7 +72,7 @@ def show_all(lst_notes: list):
             lst_tit = split_string(tit, 28)
             lst_msg = split_string(msg, 48)
             max_size = len(lst_msg) if len(lst_msg) > len(lst_tit) else len(lst_tit)
-            print(f'{i:^5} | '
+            print(f'{lst_notes[i].id:^5} | '
                   f'{dc:^21} | '
                   f'{lst_tit[0]:^30} | '
                   f'{lst_msg[0]:^50} | '

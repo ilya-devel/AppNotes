@@ -6,7 +6,7 @@ from control.write_log import write_log
 
 
 
-def is_db():
+def load_db():
     lst_notes = []
     if os.path.isfile(FILE_DB):
         with open(FILE_DB, 'r', encoding='UTF-8') as file:

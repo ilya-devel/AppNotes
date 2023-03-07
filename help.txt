@@ -8,7 +8,7 @@
     --all - show all list
     --id ID - id of notes
 
---find [OPTION]- search note
+--find [OPTION]- search note. If multiple keys are specified, then the AND rule applies
     SUBSTRING - search substring in title and message
     --title SUBSTRING - search substring in title
     --msg SUBSTRING - search substring in message
