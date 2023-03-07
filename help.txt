@@ -14,9 +14,11 @@
     --msg SUBSTRING - search substring in message
 
 --edit ID - edit note of ID
+    --title TITLE - title of notes
+    --msg MESSAGE - message of notes
 
 --delete ID - delete note of ID
 
---save PATH_FOR_SAVING
+--export PATH_FOR_SAVING - export data from csv file
 
---import PATH_FOR_IMPORTING
+--import PATH_FOR_IMPORTING - import data to csv file
