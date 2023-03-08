@@ -1,29 +1,30 @@
 # AppNotes
-work for attestation
+Work for certification in python
 
 # Application Instruction
 
---help - show this message
+`--help` -- show this message
 
---add [OPTION]- append new note
-    --title TITLE - title of notes
-    --msg MESSAGE - message of notes
+`--add [OPTION]`-- append new note
 
---show [OPTION]- show list of notes
-    --all - show all list
-    --id ID - id of notes
+    `--title TITLE` -- title of notes
+    `--msg MESSAGE` -- message of notes
 
---find [OPTION]- search note. If multiple keys are specified, then the AND rule applies
-    SUBSTRING - search substring in title and message
-    --title SUBSTRING - search substring in title
-    --msg SUBSTRING - search substring in message
+`--show [OPTION]`-- show list of notes
+    `--all` -- show all list
+    `--id ID` -- id of notes
 
---edit ID - edit note of ID
-    --title TITLE - title of notes
-    --msg MESSAGE - message of notes
+`--find [OPTION]`-- search note. If multiple keys are specified, then the AND rule applies
+    `SUBSTRING` -- search substring in title and message
+    `--title SUBSTRING` -- search substring in title
+    `--msg SUBSTRING` -- search substring in message
 
---delete ID - delete note of ID
+`--edit ID` -- edit note of ID
+    `--title TITLE` -- title of notes
+    `--msg MESSAGE` -- message of notes
 
---export - export data from csv file
+`--delete ID` -- delete note of ID
 
---import PATH_TO_FILE - import data to csv file
+`--export` -- export data from csv file
+
+`--import PATH_TO_FILE` -- import data to csv file
