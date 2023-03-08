@@ -4,6 +4,7 @@ from control.add_note import add_note
 from control.save_db import save_db, export
 from control.check_id import check_id
 from view.show import show_all, show_element
+from view.show_msg import show_msg
 from control.find_elements import find_control
 
 
@@ -35,7 +36,6 @@ def work_with_keys(lst_notes, args):
                 show_element(elem=lst_notes[ind], ind=ind)
 
     if '--find' in args:
-        # if args['--find']['--find'] != '':
         find = args['--find']
         find = find_control(args=find, lst_notes=lst_notes)
         if len(find) > 0:
@@ -43,8 +43,18 @@ def work_with_keys(lst_notes, args):
 
     if '--edit' in args:
         pass
+
     if '--delete' in args:
-        pass
+        indexes = []
+        for i in args['--delete']['--delete'].strip().split():
+            ind = check_id(i, size_lst=len(lst_notes))
+            if ind != 'err':
+                indexes.append(ind)
+        indexes.sort(reverse=True)
+        for i in indexes:
+            print(i)
+            show_msg(f"Removed note: {str(lst_notes.pop(i))}")
+
     if '--export' in args:
         export()
 

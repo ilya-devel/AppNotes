@@ -49,7 +49,7 @@ def show_element(elem, ind: int):
                   f'{lst_tit[ind] if ind < len(lst_tit) else " ":^30} | '
                   f'{lst_msg[ind] if ind < len(lst_msg) else " ":^50} | '
                   f'{" ":^21}')
-    print(f'{"-" * 6}+{"-" * 23}+{"-" * 32}+{"-" * 52}+{"-" * 21}')
+    print(f'{"-" * 6}+{"-" * 23}+{"-" * 32}+{"-" * 52}+{"-" * 21}\n')
 
 
 def show_all(lst_notes: list):
@@ -84,3 +84,4 @@ def show_all(lst_notes: list):
                       f'{lst_msg[ind] if ind < len(lst_msg) else " ":^50} | '
                       f'{" ":^21}')
         print(f'{"-" * 6}+{"-" * 23}+{"-" * 32}+{"-" * 52}+{"-" * 21}')
+    print('\n')

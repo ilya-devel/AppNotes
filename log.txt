@@ -24,3 +24,22 @@
 2023-03-08 10-41-09	[DEBUG]	Create new database
 2023-03-08 10-41-09	[ERROR]	[Errno 2] No such file or directory: 'db.db'
 2023-03-08 11-23-44	[ERROR]	Path is not valid
+2023-03-08 11-45-12	[ERROR]	Unknown index 77
+2023-03-08 11-49-46	[ERROR]	Unknown index 77
+2023-03-08 11-49-46	[ERROR]	Unknown index 4
+2023-03-08 11-49-46	[ERROR]	Unknown index 5
+2023-03-08 11-51-49	[ERROR]	Unknown index 77
+2023-03-08 11-51-49	[ERROR]	Unknown index 4
+2023-03-08 11-51-49	[ERROR]	Unknown index 5
+2023-03-08 11-51-56	[ERROR]	Unknown index 77
+2023-03-08 11-51-56	[ERROR]	Unknown index 4
+2023-03-08 11-51-56	[ERROR]	Unknown index 5
+2023-03-08 11-52-46	[ERROR]	Unknown index 4 
+2023-03-08 11-53-21	[ERROR]	Index out of range: 77
+2023-03-08 11-53-21	[ERROR]	Unknown index stt
+2023-03-08 11-54-19	[ERROR]	Index out of range: 77
+2023-03-08 11-54-19	[ERROR]	Unknown index stt
+2023-03-08 11-54-35	[ERROR]	Index out of range: 77
+2023-03-08 11-54-35	[ERROR]	Unknown index stt
+2023-03-08 11-54-57	[ERROR]	Index out of range: 77
+2023-03-08 11-54-57	[ERROR]	Unknown index stt
