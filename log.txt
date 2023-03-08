@@ -43,3 +43,7 @@
 2023-03-08 11-54-35	[ERROR]	Unknown index stt
 2023-03-08 11-54-57	[ERROR]	Index out of range: 77
 2023-03-08 11-54-57	[ERROR]	Unknown index stt
+2023-03-08 12-10-47	[ERROR]	Index out of range: 77
+2023-03-08 12-12-44	[ERROR]	Index out of range: 77
+2023-03-08 12-12-54	[ERROR]	Index out of range: 77
+2023-03-08 12-13-00	[ERROR]	Unknown index stt

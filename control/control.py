@@ -42,7 +42,22 @@ def work_with_keys(lst_notes, args):
             show_all(find)
 
     if '--edit' in args:
-        pass
+        indexes = []
+        for i in args['--edit']['--edit'].strip().split():
+            ind = check_id(i, size_lst=len(lst_notes))
+            if ind != 'err':
+                indexes.append(ind)
+        if len(indexes) > 1:
+            show_msg('Only one tab can be edited')
+        elif len(indexes) < 1:
+            show_msg('Need id of note')
+        else:
+            title = args['--edit']['--title'] if '--title' in args['--edit'].keys() else ''
+            msg = args['--edit']['--msg'] if '--msg' in args['--edit'].keys() else ''
+            if title != '' and msg != '':
+                lst_notes[indexes[0]].edit_note(title=title, msg=msg)
+            else:
+                show_msg("You need to fill in the keys --title and --msg")
 
     if '--delete' in args:
         indexes = []
