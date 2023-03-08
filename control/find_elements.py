@@ -21,7 +21,7 @@ def find_control(args: dict, lst_notes: list):
 def find_all(substring: str, lst_notes: list):
     lst_find = []
     for el in lst_notes:
-        if (substring in el.title) or (substring in el.msg):
+        if (substring in el.title.strip()) or (substring in el.msg):
             lst_find.append(el)
     if len(lst_find) == 0:
         show_msg("Nothing Found\n")

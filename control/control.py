@@ -23,7 +23,6 @@ def run_app(argv: list):
 
 
 def work_with_keys(lst_notes, args):
-    print(args)
     if '--add' in args:
         add_note(lst_notes, args['--add'])
 
@@ -37,9 +36,13 @@ def work_with_keys(lst_notes, args):
 
     if '--find' in args:
         find = args['--find']
-        find = find_control(args=find, lst_notes=lst_notes)
-        if len(find) > 0:
-            show_all(find)
+        lst_args = ''.join([find[key] for key in find.keys()])
+        if len(lst_args) != 0:
+            find = find_control(args=find, lst_notes=lst_notes)
+            if len(find) > 0:
+                show_all(find)
+        else:
+            show_msg("You need to provide an argument. Type --help for help")
 
     if '--edit' in args:
         indexes = []
@@ -54,7 +57,7 @@ def work_with_keys(lst_notes, args):
         else:
             title = args['--edit']['--title'] if '--title' in args['--edit'].keys() else ''
             msg = args['--edit']['--msg'] if '--msg' in args['--edit'].keys() else ''
-            if title != '' and msg != '':
+            if title != '' or msg != '':
                 lst_notes[indexes[0]].edit_note(title=title, msg=msg)
             else:
                 show_msg("You need to fill in the keys --title and --msg")
@@ -66,6 +69,8 @@ def work_with_keys(lst_notes, args):
             if ind != 'err':
                 indexes.append(ind)
         indexes.sort(reverse=True)
+        if len(indexes) == 0:
+            show_msg("You need enter id of note. Type --help for help")
         for i in indexes:
             print(i)
             show_msg(f"Removed note: {str(lst_notes.pop(i))}")
