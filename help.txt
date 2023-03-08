@@ -19,6 +19,6 @@
 
 --delete ID - delete note of ID
 
---export PATH_FOR_SAVING - export data from csv file
+--export - export data from csv file
 
---import PATH_FOR_IMPORTING - import data to csv file
+--import PATH_TO_FILE - import data to csv file

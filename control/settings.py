@@ -1,1 +1,1 @@
-FILE_DB = 'db.csv'
+FILE_DB = 'db.db'

@@ -15,7 +15,7 @@ def set_args(args: list):
             main_key = args[i]
             lst_args[main_key] = dict()
             tmp_key = ''
-            if main_key in ['--find', '--edit']:
+            if main_key in ['--find', '--edit', '--import']:
                 tmp_key = main_key
                 lst_args[main_key][tmp_key] = ''
             continue

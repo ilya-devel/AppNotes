@@ -1,7 +1,7 @@
 from control import load_db, get_args
-from control.load_db import load_db
+from control.load_db import load_db, import_data
 from control.add_note import add_note
-from control.save_db import save_db
+from control.save_db import save_db, export
 from control.check_id import check_id
 from view.show import show_all, show_element
 from control.find_elements import find_control
@@ -22,11 +22,12 @@ def run_app(argv: list):
 
 
 def work_with_keys(lst_notes, args):
+    print(args)
     if '--add' in args:
         add_note(lst_notes, args['--add'])
 
     if '--show' in args:
-        if '--all' in args['--show']:
+        if ('--all' in args['--show']) or (args['--show'] == dict()):
             show_all(lst_notes=lst_notes)
         if '--id' in args['--show']:
             ind = check_id(ind=args['--show']['--id'], size_lst=len(lst_notes))
@@ -40,12 +41,13 @@ def work_with_keys(lst_notes, args):
         if len(find) > 0:
             show_all(find)
 
-        pass
     if '--edit' in args:
         pass
     if '--delete' in args:
         pass
     if '--export' in args:
-        pass
+        export()
+
     if '--import' in args:
+        import_data(path_ex=args['--import']['--import'], cur_notes=lst_notes)
         pass
